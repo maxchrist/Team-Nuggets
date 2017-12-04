@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- v2 (12/4, Caitlin):
+    Added comments to XML code, fixed spacing between text and buttons, added instructions activity
+    pressing help button brings you to instruction screen (but cannot go back)
+    Parent relative layout: sets chicken nuggets as background pic and
+      places reference for text and button views -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nugget"
+    tools:context="com.nuggets.gui_v1.MainScreen">
+
+    <!-- v1 (12/4, Caitlin):
+        TextView: title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="55dp"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Chicken Nugget Run"
+        android:textSize="45sp"
+        android:textColor="#D50000"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- v1 (12/4, Caitlin):
+    Parent linear layout: places buttons in GUI -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <!-- v1 (12/4, Caitlin):
+            Button view: play button, does nothing -->
+        <Button
+            android:id="@+id/play_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:background="#1B5E20"
+            android:text="Play"
+            android:fontFamily="casual"
+            android:textColor="#FFEB3B"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <!-- v1 (12/4, Caitlin):
+            Button view: help button, does nothing -->
+        <Button
+            android:id="@+id/help_button"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="#43A047"
+            android:text="Help"
+            android:fontFamily="casual"
+            android:textColor="#FFEB3B"
+            android:textSize="30sp"
+            android:onClick="display_instructions"
+            />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
