@@ -7,6 +7,7 @@ package com.nuggs.helloworld;
 public class Car {
 
     Cart_Point location;
+    Cart_Point prev_location;
     double speed;
 
     void Car()
@@ -19,10 +20,14 @@ public class Car {
     void Car(Cart_Point inloc, double inspeed){
         location.x = inloc.x;
         location.y = inloc.y;
+        prev_location.x = inloc.x;
+        prev_location.y = inloc.y;
         speed = inspeed;
     }
 
-    void update(){
+    void update() {
+        prev_location.x = location.x;
         location.x = location.x + speed;
+
     }
 }
