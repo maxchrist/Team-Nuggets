@@ -11,6 +11,7 @@ public class play_screen extends AppCompatActivity {
     //v5 (12/9, Caitlin): added back end classes
     public double lane_num = 0;
     public char command = 'n'; /**from GUI??*/
+    public float chicken_loc = 0;
 
     boolean do_command(Model model,char com)
     {
@@ -70,9 +71,15 @@ public class play_screen extends AppCompatActivity {
     // v7 (12/9, Max): move chicken up on screen when pressing up button
     public void upButton(View v)
     {
+        chicken_loc = chicken_loc - 175;
         command = 'U';
         ImageView imageView = (ImageView) findViewById(R.id.chicken);
-        imageView.setTranslationY(float 5);
+        if (chicken_loc < -700)
+        {
+            imageView.setTranslationY(-chicken_loc);
+            chicken_loc = 0;
+        }
+        imageView.setTranslationY(chicken_loc);
     }
 
     // v5 (12/9, Caitlin): function called when down button is pressed
@@ -80,9 +87,15 @@ public class play_screen extends AppCompatActivity {
     // v7 (12/9, Max): move chicken down on screen when pressing down button
     public void downButton(View v)
     {
+        chicken_loc = chicken_loc + 175;
         command = 'D';
         ImageView imageView = (ImageView) findViewById(R.id.chicken);
-        imageView.setTranslationY(float -5);
+        if (chicken_loc > 0)
+        {
+            imageView.setTranslationY(-chicken_loc);
+            chicken_loc = 0;
+        }
+        imageView.setTranslationY(chicken_loc);
     }
 
 
