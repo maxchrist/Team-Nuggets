@@ -10,7 +10,7 @@ public class Model {
     Player chicken;
 
 
-    void Model(){
+    public Model(){
 
         carArray[0] = new Car();
         Cart_Point start1 = new Cart_Point(5, 1);
@@ -30,11 +30,23 @@ public class Model {
 
     }
 
-    void update() {
+    boolean update(char playCommand) {
+        if (playCommand == 'U') { chicken.moveUp(); }
+        else if (playCommand == 'D') { chicken.moveDown(); }
+
         for(int i=0; i<carArray.length; i++ )
         {
             carArray[i].update();
         }
+
+        for (int i =  0; i < carArray.length; i++)
+        {
+            if (chicken.getLocationX() >= carArray[i].prev_location.x &&
+                    chicken.getLocationX() <= carArray[i].location.x) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }

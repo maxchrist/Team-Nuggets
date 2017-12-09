@@ -10,7 +10,7 @@ public class Car {
     Cart_Point prev_location;
     double speed;
 
-    void Car()
+    public Car()
     {
         location.x = 1.0;
         location.y = 1.0;
