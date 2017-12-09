@@ -1,4 +1,4 @@
-package com.nuggs.helloworld;
+package com.nuggets.gui_v1;
 
 /**
  * Created by max on 12/4/17.
