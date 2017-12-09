@@ -6,8 +6,8 @@ package com.nuggets.gui_v1;
 
 public class Car {
 
-    Cart_Point location;
-    Cart_Point prev_location;
+    CartPoint location;
+    CartPoint prev_location;
     double speed;
 
     public Car()
@@ -17,7 +17,7 @@ public class Car {
         speed = 1;
     }
 
-    public Car(Cart_Point inloc, double inspeed){
+    public Car(CartPoint inloc, double inspeed){
         location.x = inloc.x;
         location.y = inloc.y;
         prev_location.x = inloc.x;

@@ -9,22 +9,20 @@ import android.widget.Button;
 public class play_screen extends AppCompatActivity {
 
     //v5 (12/9, Caitlin): added back end classes
-    Model model; /**create model*/
-    public char command = 'n'; /**from GUI??*/
     public double lane_num = 0;
-    public int num_lives = 3;
+    public char command = 'n'; /**from GUI??*/
 
-    boolean do_command(Model model,char command)
+    boolean do_command(Model model,char com)
     {
         boolean isdead = false;
-        if(command=='U')//some sort of bool from gui??
+        if(com=='U')//some sort of bool from gui??
         {
             isdead=model.update('U');
         }
-        else if(command=='D'){
+        else if(com=='D'){
             isdead=model.update('D');
         }
-        else if(command=='S'){
+        else if(com=='S'){
             isdead=model.update('S');
         }
 
@@ -32,22 +30,27 @@ public class play_screen extends AppCompatActivity {
 
     }
 
-    while(command!='Q' && num_lives > 0){
+    public void main(String[] args) {
+        Model model = new Model(); /**create model*/
 
-        boolean isdead = false;
-        if (command == 'n')//no command
-        {
-            command = 'S';
-        } else if (command == 'U' || command == 'D') {
-            isdead = do_command(model, command);
+        int num_lives = 3;
+        while (command != 'Q' && num_lives > 0) {
+
+            boolean isdead = false;
+            if (command == 'n')//no command
+            {
+                command = 'S';
+            } else if (command == 'U' || command == 'D') {
+                isdead = do_command(model, command);
+            }
+
+            if (isdead) {
+                num_lives--;
+            }
+            double newlane = model.chicken.getLocationY();
+            lane_num = newlane;
+
         }
-
-        if (isdead) {
-            num_lives--;
-        }
-        double newlane = model.chicken.getLocationY();
-        lane_num = newlane;
-
     }
 
     @Override
@@ -64,21 +67,31 @@ public class play_screen extends AppCompatActivity {
     }
 
     //v5 (12/9, Caitlin): added back end classes
-    final Button upButton = findViewById(R.id.button_id);
-    upButton.setOnClickListener(new View.OnClickListener() {
-        public void onClick(View v) {
-            // Code here executes on main thread after user presses button
-            command = 'U';
-        }
-    })
+//    final Button upButton = findViewById(R.id.button_id);
+//    upButton.setOnClickListener(new View.OnClickListener() {
+//        public void onClick(View v) {
+//            // Code here executes on main thread after user presses button
+//            command = 'U';
+//        }
+//    })
 
-    final Button downButton = findViewById(R.id.button_id);
-    downButton.setOnClickListener(new View.OnClickListener() {
-        public void onClick(View v) {
-            // Code here executes on main thread after user presses button
-            command = 'D';
-        }
-    })
+    public void upButton(View v)
+    {
+        command = 'U';
+    }
+
+//    final Button downButton = findViewById(R.id.button_id);
+//    downButton.setOnClickListener(new View.OnClickListener() {
+//        public void onClick(View v) {
+//            // Code here executes on main thread after user presses button
+//            command = 'D';
+//        }
+//    })
+//
+    public void downButton(View v)
+    {
+        command = 'D';
+    }
 
 
 }
