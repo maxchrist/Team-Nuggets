@@ -5,7 +5,6 @@ package com.nuggs.helloworld;
  */
 
 public class Model {
-    int lane_count;
 
     Car[] carArray = new Car[8];
     Player chicken;
