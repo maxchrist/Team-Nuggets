@@ -12,8 +12,8 @@ public class Car {
 
     void Car()
     {
-        location.x = 0.0;
-        location.y = 0.0;
+        location.x = 1.0;
+        location.y = 1.0;
         speed = 1;
     }
 
