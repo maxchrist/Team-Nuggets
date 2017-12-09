@@ -1,14 +1,17 @@
 /**
  * Created by jessicalin on 12/9/17.
  */
-    void do_command(Model& model)
+    void do_command(Model model, char command)
     {
-        if (go_up)//some sort of bool from gui??
+        if (command=='U')//some sort of bool from gui??
         {
             model.update('U')
         }
-        else (go_down) {
+        else if (command=='D') {
             model.update('D');
+        }
+        else if (command=='S'){
+            model.update('S');
         }
 
     }
