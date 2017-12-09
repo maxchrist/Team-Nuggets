@@ -1,53 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- v4 (12/6, Caitlin): added play screen for gameplay -->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--v6 (12/9, Caitlin): added up/down buttons that will control the chicken
+    v5 (12/9, Caitlin): added chicken, car (red, green, blue) and street images to android studio (under drawable)
+    set street as background of play screen
+    added quit button to go back to main screen
+    v4 (12/6, Caitlin): added play screen for gameplay -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4CAF50"
+    android:background="@drawable/street"
     tools:context="com.nuggets.gui_v1.play_screen">
 
-    <ImageView
-        android:id="@+id/street"
-        android:layout_weight="0.2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/street"
-        />
-
-    <!-- v4 (12/9, Caitlin): this is the imageview for the chicken
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/chicken"
-        android:layout_gravity="center_horizontal"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY"/>
-        -->
-
+    <!-- v5 (12/9, Caitlin): quit button (goes back to main screen) -->
     <Button
+        android:id="@+id/quit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Quit"
+        android:fontFamily="casual"
+        android:textSize="20sp"
+        android:background="#B71C1C"
+        android:textColor="#FFEE58"
         android:onClick="display_main"/>
 
-
+    <!-- v6 (12/9, Caitlin): up button (move chicken up a lane) -->
     <Button
+        android:id="@+id/up_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="up"
+        android:fontFamily="casual"
+        android:textSize="20sp"
+        android:background="#2E7D32"
+        android:textColor="#FFEE58"
         android:onClick="upButton"
-        android:layout_gravity="center_horizontal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
         />
 
+    <!-- v6 (12/9, Caitlin): down button (move chicken down a lane) -->
     <Button
+        android:id="@+id/down_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="down"
+        android:fontFamily="casual"
+        android:textSize="20sp"
+        android:background="#2E7D32"
+        android:textColor="#FFEE58"
         android:onClick="downButton"
-        android:layout_gravity="bottom"/>
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"/>
+
+    <!-- v6 (12/9, Caitlin: chicken imageview -->
+    <ImageView
+        android:id="@+id/chicken"
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:src="@drawable/chicken"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        />
 
 
 
-</FrameLayout>
+</RelativeLayout>

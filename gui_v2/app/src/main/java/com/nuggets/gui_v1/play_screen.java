@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 public class play_screen extends AppCompatActivity {
 
@@ -66,28 +65,13 @@ public class play_screen extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //v5 (12/9, Caitlin): added back end classes
-//    final Button upButton = findViewById(R.id.button_id);
-//    upButton.setOnClickListener(new View.OnClickListener() {
-//        public void onClick(View v) {
-//            // Code here executes on main thread after user presses button
-//            command = 'U';
-//        }
-//    })
-
+    // v5 (12/9, Caitlin): function called when up button is pressed
     public void upButton(View v)
     {
         command = 'U';
     }
 
-//    final Button downButton = findViewById(R.id.button_id);
-//    downButton.setOnClickListener(new View.OnClickListener() {
-//        public void onClick(View v) {
-//            // Code here executes on main thread after user presses button
-//            command = 'D';
-//        }
-//    })
-//
+    // v5 (12/9, Caitlin): function called when down button is pressed
     public void downButton(View v)
     {
         command = 'D';
