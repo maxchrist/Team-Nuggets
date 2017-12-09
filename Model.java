@@ -32,9 +32,9 @@ public class Model {
     }
 
     void update() {
-        for(int i=0; i<studentArray.length; i++ )
+        for(int i=0; i<carArray.length; i++ )
         {
-            carArray[i].update;
+            carArray[i].update();
         }
     }
 
