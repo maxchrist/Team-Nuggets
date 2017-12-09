@@ -17,7 +17,7 @@ public class Car {
         speed = 1;
     }
 
-    void Car(Cart_Point inloc, double inspeed){
+    public Car(Cart_Point inloc, double inspeed){
         location.x = inloc.x;
         location.y = inloc.y;
         prev_location.x = inloc.x;
