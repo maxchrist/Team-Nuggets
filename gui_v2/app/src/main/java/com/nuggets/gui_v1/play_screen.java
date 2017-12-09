@@ -84,7 +84,6 @@ public class play_screen extends AppCompatActivity {
 
     // v5 (12/9, Caitlin): function called when down button is pressed
     // v7 (12/9, Max): move chicken down on screen when pressing down button
-    // v7 (12/9, Max): move chicken down on screen when pressing down button
     public void downButton(View v)
     {
         chicken_loc = chicken_loc + 175;

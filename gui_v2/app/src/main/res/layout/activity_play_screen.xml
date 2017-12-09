@@ -54,7 +54,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"/>
 
-    <!-- v6 (12/9, Caitlin: chicken imageview -->
+    <!-- v6 (12/9, Caitlin: added chicken imageview -->
     <ImageView
         android:id="@+id/chicken"
         android:layout_width="50dp"
@@ -63,6 +63,23 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         />
+
+    <!-- v8 (12/9, Caitlin): added one car ImageView -->
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:src="@drawable/car_blue"
+        android:layout_centerVertical="true"/>
+
+    <!-- v8 (12/9, Caitlin): add score text box -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score: 0"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:textSize="20sp"
+        android:textColor="#212121"/>
 
 
 

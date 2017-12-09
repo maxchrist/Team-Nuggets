@@ -20,13 +20,12 @@
         </activity>
         <activity
             android:name=".help_screen"
-            android:screenOrientation="landscape">
-
-        </activity>
-        <activity android:name=".play_screen"
-            android:screenOrientation="landscape">
-
-        </activity>
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".play_screen"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".end_screen"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>
