@@ -27,6 +27,16 @@ public class Car {
 
     void update() {
         prev_location.x = location.x;
+        if (location.x > 10 && speed > 0)
+        {
+            location.x = 0;
+            prev_location.x = 0;
+        }
+        if (location.x < 0 && speed < 0)
+        {
+            location.x = 10;
+            prev_location.x = 10;
+        }
         location.x = location.x + speed;
 
     }
