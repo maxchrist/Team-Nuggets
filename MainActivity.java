@@ -14,8 +14,11 @@ public class MainActivity extends AppCompatActivity {
                 if(command==NULL)//no command
                 {
                         command='S'
+                }else if (command == 'U' || command == 'D')
+                {
+                        boolean isdead = do_command(model, command);
                 }
-                boolean isdead = do_command(model, command);
+            
                 if(boolean)
                 {
                         num_lives--;
