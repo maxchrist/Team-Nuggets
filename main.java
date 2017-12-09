@@ -5,7 +5,8 @@
 public static void main(){
     Model model; /**create model*/
     char command; /**from GUI??*/
-    int lane_num = 0;
+    double lane_num = 0;
+    int num_lives = 3;
     do
         {
         Scanner s = new Scanner(System.in);/**gets command*/
@@ -14,9 +15,15 @@ public static void main(){
         {
             command='S'
         }
-        do_command(model, command);
-
+        boolean isdead = do_command(model, command);
+        if(boolean)
+        {
+            num_lives--;
         }
-        while(command!='Q');
+        double newlane = model.chicken.getLocationY();
+        lane_num = newlane;
+        
+        }
+        while(command!='Q' && num_lives > 0);
 
 }
