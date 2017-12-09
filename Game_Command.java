@@ -3,18 +3,22 @@ package com.nuggets.gui_v1;
 /**
  * Created by jessicalin on 12/9/17.
  */
-    void do_command(Model model, char command)
+// returns true if chicken is dead
+    boolean do_command(Model model, char command)
     {
+       boolean isdead;
         if (command=='U')//some sort of bool from gui??
         {
-            model.update('U')
+            isdead = model.update('U');
         }
         else if (command=='D') {
-            model.update('D');
+            isdead = model.update('D');
         }
         else if (command=='S'){
-            model.update('S');
+            isdead = model.update('S');
         }
+        
+        return isdead;
 
     }
 
