@@ -5,6 +5,7 @@
 public static void main(){
     Model model; /**create model*/
     char command; /**from GUI??*/
+    int lane_num = 0;
     do
         {
         Scanner s = new Scanner(System.in);/**gets command*/
