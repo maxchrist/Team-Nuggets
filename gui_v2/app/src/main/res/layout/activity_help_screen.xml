@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- v3 (12/6, Caitlin):
+    added back button to return to main screen -->
+<!-- v2 (12/4, Caitlin):
+    Added help screen
+    Parent relative layout: sets chicken nuggets as background pic and
+      places reference for text views -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nugget"
+    tools:context="com.nuggets.gui_v1.help_screen">
+
+    <!-- v2 (12/4, Caitlin):
+        TextView: instruction header -->
+    <TextView
+        android:id="@+id/instruction_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:background="#FDD835"
+        android:text="Instructions"
+        android:fontFamily="casual"
+        android:textSize="35sp"
+        android:textColor="#D50000"/>
+
+    <!-- v2 (12/4, Caitlin):
+        TextView: instruction text -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/instruction_text"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:background="#FDD835"
+        android:text="Help the chicken escape the farm!
+Control the chicken by pressing the up/down arrows to move up and down lanes.
+Don't get hit by a car or you'll turn into a nugget! You have four lives before you make a 4-piece chicken nugget meal and get shipped to the nearest fast food restaurant."
+        android:fontFamily="casual"
+        android:textSize="20sp"
+        android:textColor="#D50000"
+        />
+    <!-- v3 (12/6, Caitlin): added button to return to main screen -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#43A047"
+        android:text="Back"
+        android:textColor="#FFEB3B"
+        android:textSize="25sp"
+        android:fontFamily="casual"
+        android:onClick="display_main"/>
+
+
+
+</RelativeLayout>
