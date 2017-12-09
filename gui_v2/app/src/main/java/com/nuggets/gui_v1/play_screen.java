@@ -47,6 +47,8 @@ public class play_screen extends AppCompatActivity {
 
             if (isdead) {
                 num_lives--;
+                death();
+
             }
             double newlane = model.chicken.getLocationY();
             lane_num = newlane;
@@ -97,5 +99,9 @@ public class play_screen extends AppCompatActivity {
         imageView.setTranslationY(chicken_loc);
     }
 
+    public void death() {
+        Intent intent = new Intent(this, end_screen.class);
+        startActivity(intent);
+    }
 
 }
