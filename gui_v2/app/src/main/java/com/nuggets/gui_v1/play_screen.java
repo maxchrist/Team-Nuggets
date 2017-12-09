@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 public class play_screen extends AppCompatActivity {
 
@@ -66,15 +67,22 @@ public class play_screen extends AppCompatActivity {
     }
 
     // v5 (12/9, Caitlin): function called when up button is pressed
+    // v7 (12/9, Max): move chicken up on screen when pressing up button
     public void upButton(View v)
     {
         command = 'U';
+        ImageView imageView = (ImageView) findViewById(R.id.chicken);
+        imageView.setTranslationY(float 5);
     }
 
     // v5 (12/9, Caitlin): function called when down button is pressed
+    // v7 (12/9, Max): move chicken down on screen when pressing down button
+    // v7 (12/9, Max): move chicken down on screen when pressing down button
     public void downButton(View v)
     {
         command = 'D';
+        ImageView imageView = (ImageView) findViewById(R.id.chicken);
+        imageView.setTranslationY(float -5);
     }
 
 
