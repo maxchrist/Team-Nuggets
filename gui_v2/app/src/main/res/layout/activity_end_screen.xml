@@ -16,12 +16,13 @@
         />
 
     <TextView
+        android:id="@+id/final_score_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="GAME OVER"
         android:textSize="75sp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="75dp"
         android:textColor="#D50000"/>
 
     <TextView
@@ -29,7 +30,7 @@
         android:layout_height="wrap_content"
         android:text="Score: 0"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="200dp"
         android:textSize="40sp"
         android:textColor="#212121"/>
 
@@ -38,13 +39,16 @@
         android:layout_height="wrap_content"
         android:text="Unfortunately, you are now a lovely 4 pc chicken nuggets meal"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="125dp"
+        android:layout_marginTop="175dp"
         android:textColor="#212121"
         android:textSize="18sp"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_gravity="center|bottom"
+        android:gravity="center"
         android:text="Main Screen"
         android:fontFamily="casual"
         android:onClick="display_main"

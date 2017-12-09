@@ -21,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
         android:layout_centerInParent="true"
         android:background="#FDD835"
         android:text="Instructions"
@@ -36,11 +37,11 @@
         android:layout_centerInParent="true"
         android:layout_below="@id/instruction_text"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:background="#FDD835"
-        android:text="Help the chicken escape the farm!
-Control the chicken by pressing the up/down arrows to move up and down lanes.
+        android:text="Help the chicken cross the street!
+Control the chicken by pressing the up/down buttons to move up and down lanes.
 Don't get hit by a car or you'll turn into a nugget! You have four lives before you make a 4-piece chicken nugget meal and get shipped to the nearest fast food restaurant."
         android:fontFamily="casual"
         android:textSize="20sp"
@@ -48,8 +49,10 @@ Don't get hit by a car or you'll turn into a nugget! You have four lives before 
         />
     <!-- v3 (12/6, Caitlin): added button to return to main screen -->
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
         android:background="#43A047"
         android:text="Back"
         android:textColor="#FFEB3B"

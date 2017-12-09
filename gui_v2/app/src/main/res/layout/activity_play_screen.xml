@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--v6 (12/9, Caitlin): added up/down buttons that will control the chicken
+<!--v9 (12/9, Caitlin): somehow got rid of top bar thing??????? on all screens
+    v6 (12/9, Caitlin): added up/down buttons that will control the chicken
     v5 (12/9, Caitlin): added chicken, car (red, green, blue) and street images to android studio (under drawable)
     set street as background of play screen
     added quit button to go back to main screen
@@ -16,8 +17,9 @@
     <!-- v5 (12/9, Caitlin): quit button (goes back to main screen) -->
     <Button
         android:id="@+id/quit_button"
-        android:layout_width="wrap_content"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Quit"
         android:fontFamily="casual"
         android:textSize="20sp"
@@ -28,7 +30,7 @@
     <!-- v6 (12/9, Caitlin): up button (move chicken up a lane) -->
     <Button
         android:id="@+id/up_button"
-        android:layout_width="wrap_content"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:text="up"
         android:fontFamily="casual"
@@ -38,12 +40,13 @@
         android:onClick="upButton"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:gravity="center"
         />
 
     <!-- v6 (12/9, Caitlin): down button (move chicken down a lane) -->
     <Button
         android:id="@+id/down_button"
-        android:layout_width="wrap_content"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:text="down"
         android:fontFamily="casual"
@@ -52,7 +55,8 @@
         android:textColor="#FFEE58"
         android:onClick="downButton"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:gravity="center"/>
 
     <!-- v6 (12/9, Caitlin: added chicken imageview -->
     <ImageView
@@ -73,6 +77,7 @@
 
     <!-- v8 (12/9, Caitlin): add score text box -->
     <TextView
+        android:id="@+id/score_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Score: 0"
