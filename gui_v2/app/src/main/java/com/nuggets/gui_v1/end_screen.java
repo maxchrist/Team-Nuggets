@@ -16,7 +16,7 @@ public class end_screen extends AppCompatActivity {
 
         // v10 (12/9, Caitlin): score box displays score
         TextView textView = (TextView) findViewById(R.id.final_score_text);
-        textView.setText("Score: " + play_screen.lane_num);
+        textView.setText("Score: " + play_screen.score);
     }
 
     // v8 (Caitlin, 12/9): go back to main screen if main screen button pressed

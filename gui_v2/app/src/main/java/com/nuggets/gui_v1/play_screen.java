@@ -12,6 +12,7 @@ public class play_screen extends AppCompatActivity {
     //v5 (12/9, Caitlin): added back end classes to GUI code
 
     public static double lane_num = 0;
+    public static double score = 0;
     public static char command = 'n'; /**from GUI??*/
     public float chicken_loc = 0;
     public static Model model = new Model();
@@ -29,7 +30,9 @@ public class play_screen extends AppCompatActivity {
         else {
 
         }
+        if (isdead){
 
+        }
         return isdead;
 
     }
@@ -51,10 +54,14 @@ public class play_screen extends AppCompatActivity {
 
         if (isdead) {
             death();
+            lane_num = 0;
+            model.chicken.resetLoc();
         }
-        double newlane = model.chicken.getLocationY();
-        lane_num = newlane;
-
+        else {
+            double newlane = model.chicken.getLocationY();
+            lane_num = newlane;
+            score = lane_num;
+        }
     }
 
     @Override
@@ -109,6 +116,7 @@ public class play_screen extends AppCompatActivity {
     boolean death() {
         Intent intent = new Intent(this, end_screen.class);
         startActivity(intent);
+
         return true;
     }
 
