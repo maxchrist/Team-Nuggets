@@ -36,12 +36,12 @@ public class Model {
         else{
 
         }
-/*
+
         for(int i=1; i<carArray.length; i++ )
         {
             carArray[i].update();
         }
-*/
+
         for (int i =  1; i < carArray.length; i++)
         {
             if (chicken.getLocationX() >= carArray[i].prev_location.x &&
@@ -51,5 +51,9 @@ public class Model {
         }
         return false;
     }
+
+
+
+
 
 }

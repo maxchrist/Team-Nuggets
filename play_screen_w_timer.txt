@@ -1,11 +1,15 @@
 package com.nuggets.gui_v1;
 
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+
+
 
 public class play_screen extends AppCompatActivity {
 
@@ -17,6 +21,19 @@ public class play_screen extends AppCompatActivity {
     public float chicken_loc = 0;
     public static Model model = new Model();
 
+    // v11 (12/10, Caitlin): update cars after fixed time interval
+    CountDownTimer car_timer = new CountDownTimer(30000, 1000) {
+        @Override
+        public void onTick(long millisUntilFinished) {
+            model.car_updates();
+        }
+
+        @Override
+        public void onFinish() {
+            //model.car_updates();
+        }
+    };
+
     static boolean do_command(Model model,char com)
     {
         boolean isdead = false;
@@ -24,20 +41,26 @@ public class play_screen extends AppCompatActivity {
         {
             isdead=model.update('U');
         }
-        else if(com=='D') {
-            isdead = model.update('D');
+        else if(com=='D'){
+            isdead=model.update('D');
         }
+        else {
+
+        }
+        if (isdead){
+
+        }
+
         return isdead;
 
     }
 
     public void mainLoop(){
 
-//        lane_num = 5;
-//        TextView textView = (TextView) findViewById(R.id.score_text);
-//        textView.setText("Score: " + lane_num);
-
         boolean isdead = false;
+
+        //start car timer
+        car_timer.start();
 
         if (command == 'n')//no command
         {
@@ -47,17 +70,17 @@ public class play_screen extends AppCompatActivity {
         }
 
         if (isdead) {
+            car_timer.cancel();
             death();
             lane_num = 0;
-            score++;
-            model.chicken.resetLoc();
+            model.chicken.resetLoc(); //reset score for next game
         }
         else {
             double newlane = model.chicken.getLocationY();
             lane_num = newlane;
-            score++;
-
+            score = lane_num;
         }
+
     }
 
     @Override
@@ -69,10 +92,6 @@ public class play_screen extends AppCompatActivity {
 
     //v4 (12/9, Caitlin): added back button capability - Calls up main_screen when the user taps the Quit button
     public void display_main(View view) {
-        lane_num = 0;
-        score = 0;
-        model.chicken.resetLoc();
-
         Intent intent = new Intent(this, main_screen.class);
         startActivity(intent);
     }
@@ -92,7 +111,7 @@ public class play_screen extends AppCompatActivity {
         imageView.setTranslationY(chicken_loc);
         mainLoop();
         TextView textView = (TextView) findViewById(R.id.score_text);
-        textView.setText("Score: " + score);
+        textView.setText("Score: " + lane_num);
     }
 
     // v5 (12/9, Caitlin): function called when down button is pressed
@@ -110,13 +129,12 @@ public class play_screen extends AppCompatActivity {
         imageView.setTranslationY(chicken_loc);
         mainLoop();
         TextView textView = (TextView) findViewById(R.id.score_text);
-        textView.setText("Score: " + score);
+        textView.setText("Score: " + lane_num);
     }
 
     boolean death() {
         Intent intent = new Intent(this, end_screen.class);
         startActivity(intent);
-
         return true;
     }
 

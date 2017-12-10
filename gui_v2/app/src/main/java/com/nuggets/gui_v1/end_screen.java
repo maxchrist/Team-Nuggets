@@ -21,6 +21,7 @@ public class end_screen extends AppCompatActivity {
 
     // v8 (Caitlin, 12/9): go back to main screen if main screen button pressed
     public void display_main(View view) {
+        play_screen.score = 0;
         Intent intent = new Intent(this, main_screen.class);
         startActivity(intent);
     }
