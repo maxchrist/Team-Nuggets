@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--v9 (12/9, Caitlin): somehow got rid of top bar thing??????? on all screens
+<!--v9 (12/9, Caitlin): somehow got rid of top bar thing on all screens
+    resized and relocated images, texts, buttons to accommodate missing bar
     v6 (12/9, Caitlin): added up/down buttons that will control the chicken
     v5 (12/9, Caitlin): added chicken, car (red, green, blue) and street images to android studio (under drawable)
     set street as background of play screen
@@ -61,8 +62,8 @@
     <!-- v6 (12/9, Caitlin: added chicken imageview -->
     <ImageView
         android:id="@+id/chicken"
-        android:layout_width="50dp"
-        android:layout_height="60dp"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
         android:src="@drawable/chicken"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
@@ -75,7 +76,7 @@
         android:src="@drawable/car_blue"
         android:layout_centerVertical="true"/>
 
-    <!-- v8 (12/9, Caitlin): add score text box -->
+    <!-- v8 (12/9, Caitlin): added score text box -->
     <TextView
         android:id="@+id/score_text"
         android:layout_width="wrap_content"

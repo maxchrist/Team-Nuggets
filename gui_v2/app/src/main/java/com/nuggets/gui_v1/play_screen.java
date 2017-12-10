@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class play_screen extends AppCompatActivity {
 
-    //v5 (12/9, Caitlin): added back end classes
+    //v5 (12/9, Caitlin): added back end classes to GUI code
 
     public static double lane_num = 0;
     public static char command = 'n'; /**from GUI??*/
@@ -40,20 +40,20 @@ public class play_screen extends AppCompatActivity {
 //        TextView textView = (TextView) findViewById(R.id.score_text);
 //        textView.setText("Score: " + lane_num);
 
-            boolean isdead = false;
+        boolean isdead = false;
 
-            if (command == 'n')//no command
-            {
-                command = 'n';
-            } else if (command == 'U' || command == 'D') {
-                isdead = do_command(model, command);
-            }
+        if (command == 'n')//no command
+        {
+            command = 'n';
+        } else if (command == 'U' || command == 'D') {
+            isdead = do_command(model, command);
+        }
 
-            if (isdead) {
-                death();
-            }
-            double newlane = model.chicken.getLocationY();
-            lane_num = newlane;
+        if (isdead) {
+            death();
+        }
+        double newlane = model.chicken.getLocationY();
+        lane_num = newlane;
 
     }
 
@@ -64,8 +64,7 @@ public class play_screen extends AppCompatActivity {
 
     }
 
-    /**v4 (12/9, Caitlin): added back button capability
-     * Calls up main_screen when the user taps the Quit button */
+    //v4 (12/9, Caitlin): added back button capability - Calls up main_screen when the user taps the Quit button
     public void display_main(View view) {
         Intent intent = new Intent(this, main_screen.class);
         startActivity(intent);
@@ -107,7 +106,7 @@ public class play_screen extends AppCompatActivity {
         textView.setText("Score: " + lane_num);
     }
 
-     boolean death() {
+    boolean death() {
         Intent intent = new Intent(this, end_screen.class);
         startActivity(intent);
         return true;

@@ -35,6 +35,6 @@ public class Player {
 
     public void levelUp() { level++; }
 
-    public void resetLoc() { location = new CartPoint(); }
+    public void resetLoc() { location = new CartPoint();}
 
 }
