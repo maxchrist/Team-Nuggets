@@ -33,12 +33,12 @@ public class Model {
     boolean update(char playCommand) {
         if (playCommand == 'U') { chicken.moveUp(); }
         else if (playCommand == 'D') { chicken.moveDown(); }
-
+/*
         for(int i=0; i<carArray.length; i++ )
         {
             carArray[i].update();
         }
-
+*/
         for (int i =  0; i < carArray.length; i++)
         {
             if (chicken.getLocationX() >= carArray[i].prev_location.x &&

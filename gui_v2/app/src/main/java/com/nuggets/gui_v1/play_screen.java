@@ -24,14 +24,8 @@ public class play_screen extends AppCompatActivity {
         {
             isdead=model.update('U');
         }
-        else if(com=='D'){
-            isdead=model.update('D');
-        }
-        else {
-
-        }
-        if (isdead){
-
+        else if(com=='D') {
+            isdead = model.update('D');
         }
         return isdead;
 
@@ -60,7 +54,8 @@ public class play_screen extends AppCompatActivity {
         else {
             double newlane = model.chicken.getLocationY();
             lane_num = newlane;
-            score = lane_num;
+            score++;
+
         }
     }
 

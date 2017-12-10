@@ -9,7 +9,7 @@ public class CartPoint {
     public double y;
 
     public CartPoint(){
-        x = 0;
+        x = 5;
         y = 0;
     }
 
