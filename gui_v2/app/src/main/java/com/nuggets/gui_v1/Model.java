@@ -6,8 +6,8 @@ package com.nuggets.gui_v1;
 
 public class Model {
 
-    Car[] carArray = new Car[8];
-    Player chicken;
+    public Car[] carArray = new Car[8];
+    public Player chicken = new Player();
 
 
     public Model(){
@@ -33,13 +33,16 @@ public class Model {
     boolean update(char playCommand) {
         if (playCommand == 'U') { chicken.moveUp(); }
         else if (playCommand == 'D') { chicken.moveDown(); }
+        else{
 
-        for(int i=0; i<carArray.length; i++ )
+        }
+
+        for(int i=1; i<carArray.length; i++ )
         {
             carArray[i].update();
         }
 
-        for (int i =  0; i < carArray.length; i++)
+        for (int i =  1; i < carArray.length; i++)
         {
             if (chicken.getLocationX() >= carArray[i].prev_location.x &&
                     chicken.getLocationX() <= carArray[i].location.x) {

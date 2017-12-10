@@ -6,9 +6,9 @@ package com.nuggets.gui_v1;
 
 public class Car {
 
-    CartPoint location;
-    CartPoint prev_location;
-    double speed;
+    public CartPoint location = new CartPoint();
+    public CartPoint prev_location = new CartPoint();
+    public double speed;
 
     public Car()
     {

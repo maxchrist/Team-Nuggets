@@ -2,11 +2,10 @@ package com.nuggets.gui_v1;
 
 
 public class Player {
-    private CartPoint location;
+    private CartPoint location = new CartPoint();
     private int level; // 1 - 3 for egg through chicken
 
     public Player(){
-        CartPoint location;
         level = 0;
     }
 
